@@ -997,7 +997,6 @@
     link.addEventListener('click', (e) => {
       e.preventDefault();
       showToast(link.getAttribute('data-district'));
-      setTimeout(() => { window.location.href = link.href; }, 300);
     });
   });
   toastCloseBtn.addEventListener('click', () => toast.classList.remove('active'));
