@@ -596,7 +596,23 @@ body { padding-top: 130px; }
 
 .hero-shapes { display: none; }
 
-.hero-scan-line { display: none; }
+.hero-scan-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), var(--neon-blue), var(--cyan), transparent);
+  z-index: 2;
+  opacity: 0.7;
+  filter: blur(1px);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+  animation: scanMove 7s ease-in-out infinite;
+}
+
+@keyframes scanMove {
+  0%, 100% { top: 15%; opacity: 0; }
+  10%, 90% { opacity: 0.7; }
+  50% { top: 85%; opacity: 1; }
+}
 
 .hero-overlay {
   position: absolute;
